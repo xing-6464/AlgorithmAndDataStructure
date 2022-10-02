@@ -1,9 +1,14 @@
 class LinearSearch {
-    static search (data: number[], target: number): number {
+
+    private constructor () {}
+
+    static search<T> (data: T[], target: T): number {
         for (let i = 0; i < data.length; i++) {
-            if (target === data[i]) return i
+            if (data[i] === target) return i
         }
 
         return -1
     }
 }
+
+export default LinearSearch
