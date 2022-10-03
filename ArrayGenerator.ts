@@ -1,15 +1,11 @@
-class ArrayGenerator {
-    private constructor () {}
+function generateOrderedArray (n: number): number[] {
+    const arr = new Array(n)
 
-    static generateOrderedArray (n: number): number[] {
-        const arr = new Array(n)
-
-        for (let i = 0; i < n; i++) {
-            arr[i] = i
-        }
-
-        return arr
+    for (let i = 0; i < n; i++) {
+        arr[i] = i
     }
+
+    return arr
 }
 
-export default ArrayGenerator
+export default generateOrderedArray
