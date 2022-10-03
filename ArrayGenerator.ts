@@ -1,8 +1,10 @@
 function generateOrderedArray (n: number): number[] {
     const arr = new Array(n)
 
-    for (let i = n; i > n; i--) {
-        arr[i] = i
+    let index = 0
+    for (let i = n - 1; i >= 0; i--) {
+        arr[index] = i
+        index++
     }
 
     return arr

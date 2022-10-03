@@ -1,13 +1,12 @@
 import generateOrderedArray from "./ArrayGenerator"
-import { sortTest, isSorted } from './SortingHelper'
+import { sortTest } from './SortingHelper'
 
 function main (): void {
-    const dataSize = [10000]
+    const dataSize = [10000, 100000]
     for (let n of dataSize) {
         const arr = generateOrderedArray(n)
-        sortTest('SelectionSort', arr)
+        sortTest('InsertionSort', arr)
     }
-
 }
 
 main()

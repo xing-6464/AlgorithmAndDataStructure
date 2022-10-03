@@ -1,4 +1,5 @@
 import SelectionSort from './Algorithm/SelectionSort/SelectionSort'
+import InsertionSort from './Algorithm/InsertionSort/InsertionSort'
 
 function isSorted<T> (arr: T[]): boolean {
     for (let i = 1; i < arr.length; i++) {
@@ -13,6 +14,8 @@ function sortTest<T> (sortName: string, arr: T[]): void {
         case 'SelectionSort':
             SelectionSort(arr)
             break
+        case 'InsertionSort':
+            InsertionSort(arr)
         default:
             break
     }
