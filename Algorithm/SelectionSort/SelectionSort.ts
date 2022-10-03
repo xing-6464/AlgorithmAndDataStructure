@@ -13,10 +13,10 @@ function SelectionSort<T> (arr: T[], bool = true,fun?: (arr: T[]) => void): void
             swap(arr, minIndex, i)
         }
     } else {
-        for (let i = arr.length - 1; i > 0; i--) {
+        for (let i = arr.length - 1; i >= 0; i--) {
             
             let maxIndex = i
-            for (let j = i; j > 0; j--) {
+            for (let j = i; j >= 0; j--) {
                 if (arr[maxIndex] < arr[j]) maxIndex = j
             }
 
