@@ -1,13 +1,27 @@
-function generateOrderedArray (n: number): number[] {
-    const arr = new Array(n)
+class ArrayGenerator {
+    
+    private constructor () {}
 
-    let index = 0
-    for (let i = n - 1; i >= 0; i--) {
-        arr[index] = i
-        index++
+    static generateOrderedArray (n: number): number[] {
+        const arr = new Array(n)
+    
+        for (let i = 0; i < n; i++) {
+            arr[i] = i
+        }
+    
+        return arr
     }
-
-    return arr
+    
+    static generateRandomArray (n: number): number[] {
+        const arr = new Array(n)
+    
+        for (let i = 0; i < n; i++) {
+            arr[i] = Math.floor(Math.random() * 1000)
+        }
+    
+        return arr
+    }
 }
 
-export default generateOrderedArray
+
+export default ArrayGenerator
