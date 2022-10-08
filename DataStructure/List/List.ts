@@ -24,12 +24,13 @@ class List<T> {
 
     // 获取一个元素
     get (index: number): T {
-        if (index >= this.size) throw new Error('参数不正确,当前参数大于数组长度')
+        if (index < 0 || index >= this.size) throw new Error('参数不正确,当前参数大于数组长度')
         return this.data[index]
     }
 
     // 修改一个元素
     set (key: number, value: T) {
+        if (key < 0 || key >= this.size) throw new Error('参数不正确,当前参数大于数组长度')
         this.data[key] = value
     }
 
@@ -43,6 +44,7 @@ class List<T> {
         this.add(0, value)
     }
 
+    // 向数组添加元素
     add (key: number, value: T) {
         if (this.size === this.data.length) throw new Error('Add failed Array is full')
         if (key < 0 || this.size < key) throw new Error('Add failed Require key >= 0 and key <= size.')
