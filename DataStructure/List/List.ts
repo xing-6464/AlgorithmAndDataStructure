@@ -57,6 +57,62 @@ class List<T> {
         this.size++
     }
 
+    // 查找数组中是否有元素e
+    contains (e: T): boolean {
+        for (let i = 0; i < this.size; i++) {
+            if (this.data[i] == e) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    // 查找数组中元素e的index,如果不存在元素e，返回-1
+    find (e: T): number {
+        for (let i = 0; i < this.size; i++) {
+            if (this.data[i] === e) {
+                return i
+            }
+        }
+        return -1
+    }
+
+    // 从数组中删除index位置的元素，返回删除的元素
+    remove (index: number): T {
+        if (index < 0 || index >= this.size) throw Error('Remove failed Index is illegel')
+
+        let ret = this.data[index]
+
+        for (let i = index + 1; i < this.size; i++) {
+            this.data[i - 1] = this.data[i]
+        }
+        this.size--
+
+        return ret
+    }
+
+    // 从数组中删除第一个元素
+    removeFirst (): T {
+        return this.remove(0)
+    }
+
+    // 从数组中删除最后一个元素
+    removeLast (): T {
+        return this.remove(this.size - 1)
+    }
+
+    // 从数组中删除元素e
+    removeElement (e: T): void {
+        let index = this.find(e)
+        if (index !== -1) this.remove(index)
+    }
+
+    // 从数组中删除所以e元素
+    removeAllElement (e: T): void {
+        for (let index = this.find(e); index !== -1; index = this.find(e)) {
+            this.remove(index)
+        }
+    }
 }
 
 export default List
